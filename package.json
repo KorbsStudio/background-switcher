@@ -9,5 +9,8 @@
   "author": "KorbsStudio",
   "devDependencies": {
     "electron": "^18.0.0"
+  },
+  "dependencies": {
+    "glasstron": "^0.1.1"
   }
 }

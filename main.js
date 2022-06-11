@@ -1,12 +1,18 @@
 const {app, BrowserWindow} = require('electron')
+const glasstron = require('glasstron')
 
 function createWindow () {
-  // Show and control the main window of your application
-  // Electron Docs: https://www.electronjs.org/docs/api/browser-window#class-browserwindow
-  const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 400,
-    autoHideMenuBar: true
+  const mainWindow = new glasstron.BrowserWindow({
+    width: 1000,
+    height: 600,
+    center: true,
+    resizable: false,
+    maximizable: false,
+    transparent: false, // Keep this false, to make sure round corners work on Windows 11
+    frame: false,
+    autoHideMenuBar: true,
+    blur: true,
+    blurType: 'blurbehind'
   })
   mainWindow.loadFile('index.html')
 }
