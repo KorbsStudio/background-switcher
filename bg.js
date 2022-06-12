@@ -1,48 +1,27 @@
-let switches = document.getElementsByClassName('switch');
-let bg = localStorage.getItem('bg');
+const storageInput = document.querySelector('.storage');
+const text = document.querySelector('.text');
+const button = document.querySelector('.btn');
 
-if (bg == null) {
-  setBG('0');
-} else {
-  setBG(bg);
+storageInput.addEventListener('input', name => {
+  text.textContent = name.target.value
+})
+
+const saveToLocal = () => {
+  localStorage.setItem('textInput', text.textContent)
 }
 
-for (let i of switches) {
-  i.addEventListener('click', function () {
-    let theme = this.dataset.theme;
-    setBG(theme);
-  });
+button.addEventListener('click', saveToLocal)
+
+const storedInput = localStorage.getItem('textInput')
+
+if (storageInput) {
+  text.textContent = storedInput;
+  document.querySelector('img#primary-background').setAttribute('src', storedInput);
 }
 
-function setBG(theme) {
-  if (theme == '0') {
-    document.querySelector('img#primary-background').setAttribute('src', '');
-    document.querySelector('#ob').style.display = 'inherit'
-    document.querySelector('img#primary-background').style.opacity = '0'
-  } else if (theme == '1') {
-    document.querySelector('img#primary-background').setAttribute('src', './imgs/pexels-eberhard-grossgasteiger-2310646.jpg');
-    document.querySelector('img#primary-background').style.opacity = '1'
-    document.querySelector('#ob').style.display = 'none'
-  } else if (theme == '2') {
-    document.querySelector('img#primary-background').setAttribute('src', './imgs/pexels-eberhard-grossgasteiger-844297.jpg');
-    document.querySelector('img#primary-background').style.opacity = '1'
-    document.querySelector('#ob').style.display = 'none'
-  }else if (theme == '3') {
-    document.querySelector('img#primary-background').setAttribute('src', './imgs/pexels-eberhard-grossgasteiger-12365968.jpg');
-    document.querySelector('img#primary-background').style.opacity = '1'
-    document.querySelector('#ob').style.display = 'none'
-  }else if (theme == '4') {
-    document.querySelector('img#primary-background').setAttribute('src', './imgs/pexels-eberhard-grossgasteiger-12366149.jpg');
-    document.querySelector('img#primary-background').style.opacity = '1'
-    document.querySelector('#ob').style.display = 'none'
-  }else if (theme == '5') {
-    document.querySelector('img#primary-background').setAttribute('src', './imgs/pexels-eberhard-grossgasteiger-12366148.jpg');
-    document.querySelector('img#primary-background').style.opacity = '1'
-    document.querySelector('#ob').style.display = 'none'
-  }else if (theme == '6') {
-    document.querySelector('img#primary-background').setAttribute('src', './imgs/pexels-eberhard-grossgasteiger-12366150.jpg');
-    document.querySelector('img#primary-background').style.opacity = '1'
-    document.querySelector('#ob').style.display = 'none'
-  }
-  localStorage.setItem('bg', theme);
-}
+function setBG1() {localStorage.setItem('textInput', './imgs/pexels-eberhard-grossgasteiger-2310646.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
+function setBG2() {localStorage.setItem('textInput', './imgs/pexels-eberhard-grossgasteiger-844297.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
+function setBG3() {localStorage.setItem('textInput', './imgs/pexels-eberhard-grossgasteiger-12365968.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
+function setBG4() {localStorage.setItem('textInput', './imgs/pexels-eberhard-grossgasteiger-12366149.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
+function setBG5() {localStorage.setItem('textInput', './imgs/pexels-eberhard-grossgasteiger-12366148.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}
+function setBG6() {localStorage.setItem('textInput', './imgs/pexels-eberhard-grossgasteiger-12366150.jpg'); document.querySelector('img#primary-background').setAttribute('src', storedInput);}

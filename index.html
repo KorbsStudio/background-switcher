@@ -6,12 +6,18 @@
       <p id="ob">Select a background below.</p>
     </div>
     <div class="switcher">
-      <img onclick="setBG('1')" src="./imgs/pexels-eberhard-grossgasteiger-2310646.jpg">
-      <img onclick="setBG('2')" src="./imgs/pexels-eberhard-grossgasteiger-844297.jpg">
-      <img onclick="setBG('3')" src="./imgs/pexels-eberhard-grossgasteiger-12365968.jpg">
-      <img onclick="setBG('4')" src="./imgs/pexels-eberhard-grossgasteiger-12366149.jpg">
-      <img onclick="setBG('5')" src="./imgs/pexels-eberhard-grossgasteiger-12366148.jpg">
-      <img onclick="setBG('6')" src="./imgs/pexels-eberhard-grossgasteiger-12366150.jpg">
+      <div class="mb-3 p-5">
+        <label for="lead">Background URL</label>
+        <input type="text" class="storage" id="nameField">
+        <p class="lead mt-3 text">Background URL:</p>
+        <button class="btn btn-secondary">Save</button>
+      </div>
+      <img onclick="setBG1()" src="./imgs/pexels-eberhard-grossgasteiger-2310646.jpg">
+      <img onclick="setBG2()" src="./imgs/pexels-eberhard-grossgasteiger-844297.jpg">
+      <img onclick="setBG3()" src="./imgs/pexels-eberhard-grossgasteiger-12365968.jpg">
+      <img onclick="setBG4()" src="./imgs/pexels-eberhard-grossgasteiger-12366149.jpg">
+      <img onclick="setBG5()" src="./imgs/pexels-eberhard-grossgasteiger-12366148.jpg">
+      <img onclick="setBG6()" src="./imgs/pexels-eberhard-grossgasteiger-12366150.jpg">
     </div>
   </body>
   <script src="./bg.js"></script>
@@ -23,6 +29,8 @@
 }
 body {
   overflow: hidden;
+  color: white;
+  font-family: arial;
 }
 p#ob {
   position: fixed;
